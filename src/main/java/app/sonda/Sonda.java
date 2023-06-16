@@ -16,8 +16,8 @@ public class Sonda implements SubjectInterface {
 	private double latitudine;
 	private double longitudine;
 	private int livelloFumo;
-	private SondaProxyInterface sondaProxy;
 	private List<ObserverInterface> observers = new ArrayList<>();
+	private SondaProxyInterface sondaProxy;
 
 	public Sonda(UUID idSonda, double latitudine, double longitudine, SondaProxyInterface sondaProxy) {
 		this.idSonda = idSonda;
@@ -30,8 +30,6 @@ public class Sonda implements SubjectInterface {
 	public void setLivelloFumo(int livelloFumo) {
 		this.livelloFumo = livelloFumo;
 		if (livelloFumo > 5) {
-//			System.out.println("Attenzione incendio in corso!");
-			sondaProxy.allerta(idSonda, latitudine, longitudine, livelloFumo);
 			notificaObservers();
 		}
 	}
