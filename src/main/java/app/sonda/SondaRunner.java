@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import app.utils.ANSI;
+
 @Component
 public class SondaRunner implements CommandLineRunner {
 
@@ -19,8 +21,8 @@ public class SondaRunner implements CommandLineRunner {
 		Sonda sonda2 = SondaFactory.createSonda(UUID.randomUUID(), random.nextLong(), random.nextLong(), sondaProxy);
 		Sonda sonda3 = SondaFactory.createSonda(UUID.randomUUID(), random.nextLong(), random.nextLong(), sondaProxy);
 
-//		System.out.println();
-//		System.out.println(ANSI.BG_RED + " ALLARMI IN CORSO " + ANSI.RESET);
+		System.out.println();
+		System.out.println(ANSI.BG_RED + " ALLARMI IN CORSO " + ANSI.RESET);
 //		System.out.println(ANSI.TEXT_BLACK + ANSI.BG_RED + " ALLARMI IN CORSO " + ANSI.RESET);
 		sonda1.setLivelloFumo(3);
 		sonda2.setLivelloFumo(6);
